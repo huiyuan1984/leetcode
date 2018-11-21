@@ -7,5 +7,3 @@ Given a string containing just the characters '\(', '\)', '{', '}', '\[' and '\]
 
 Note that an empty string is also considered valid.
 
-
-
