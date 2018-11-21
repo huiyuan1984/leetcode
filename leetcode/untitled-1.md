@@ -57,9 +57,9 @@ class Solution(object):
 IntuitionWe can build up the reverse integer one digit at a time. While doing so, we can check beforehand whether or not appending another digit would cause overflow.AlgorithmReversing an integer can be done similarly to reversing a string.We want to repeatedly "pop" the last digit off of xx and "push" it to the back of the revrev. In the end, revrev will be the reverse of the xx.To "pop" and "push" digits without the help of some auxiliary stack/array, we can use math.  
 However, this approach is dangerous, because the statement temp=rev⋅10+poptemp=rev⋅10+pop can cause overflow.Luckily, it is easy to check beforehand whether or this statement would cause an overflow.To explain, lets assume that revrev is positive.
 
-1. If temp=rev⋅10+poptemp=rev⋅10+pop causes overflow, then it must be that rev≥INTMAX10rev≥10INTMAX
-2. If rev&gt;INTMAX10rev&gt;10INTMAX, then temp=rev⋅10+poptemp=rev⋅10+pop is guaranteed to overflow.
-3. If rev==INTMAX10rev==10INTMAX, then temp=rev⋅10+poptemp=rev⋅10+pop will overflow if and only if pop&gt;7pop&gt;7
+1. If temp=rev⋅10+pop causes overflow, then it must be tha rev≥10INTMAX
+2. If rev&gt;10INTMAX, then temp=rev⋅10+pop is guaranteed to overflow.
+3. If rev==10INTMAX, then temp=rev⋅10+pop will overflow if and only if pop&gt;7
 
 Similar logic can be applied when revrev is negative.
 
@@ -81,6 +81,6 @@ class Solution {
 
 Complexity Analysis
 
-* Time Complexity: O\(log⁡\(x\)\)O\(log\(x\)\). There are roughly log⁡10\(x\)log10\(x\) digits in xx.
-* Space Complexity: O\(1\)O\(1\).
+* Time Complexity: O\(log\(x\)\). There are roughly log10\(x\) digits in x.
+* Space Complexity: O\(1\).
 
